@@ -6,6 +6,7 @@ import CartContext from "../../store/cart-context";
 
 const HeaderCartButton = (props) => {
   const cartCtx = useContext(CartContext);
+  
 
   let quantity = 0; 
 

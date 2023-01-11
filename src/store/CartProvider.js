@@ -4,6 +4,7 @@ import CartContext from "./cart-context";
 
 
 const CartProvider = props => {
+    
     const [items, updateItems] = useState([]);
     const addItemToCartHandler = (item) => {
         updateItems([...items,item]);
@@ -15,8 +16,7 @@ const CartProvider = props => {
         items:items,
         totalAmount:0,
         addItem: addItemToCartHandler,
-        removeItem: reomveItemFromCartHandler,
-        message:'Click Here'
+        removeItem: reomveItemFromCartHandler
     }
  return <CartContext.Provider value={cartContext}>
     {props.children}
