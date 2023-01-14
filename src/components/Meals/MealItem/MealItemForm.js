@@ -6,20 +6,18 @@ import CartContext from "../../../store/cart-context";
 const MealItemForm = (props) => {
   const cartCtx = useContext(CartContext);
 
+ 
   const onClickAdd = (event) => {
     event.preventDefault();
-    const quantity = document.getElementById('amount_' + props.id).value;
-    cartCtx.addItem({...props.item, quantity: quantity});
-    console.log(cartCtx.items);
+    let quantity = document.getElementById("amount_" + props.id).value;
+    cartCtx.addItem({ ...props.item, quantity: quantity });
   };
   return (
-    
-    <form className={classes.form}>
-        {console.log('Inside Render',cartCtx)}
+    <form className={classes.form} onSubmit={onClickAdd}>
       <Input
         label="Amount"
         input={{
-          id: 'amount_' + props.id,
+          id: "amount_" + props.id,
           type: "number",
           min: "1",
           max: "5",
@@ -27,7 +25,9 @@ const MealItemForm = (props) => {
           defaultValue: "1",
         }}
       />
-      <button onClick={onClickAdd}>+ Add</button>
+      <button type="submit" id={props.id}>
+        + Add 
+      </button>
     </form>
   );
 };

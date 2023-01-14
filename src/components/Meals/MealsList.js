@@ -8,27 +8,45 @@ const MealsList = () => {
   const data = [
     {
       id: "m1",
-      name: "Sushi",
-      description: "Finest fish and veggies",
-      price: 22.99,
+      name: "Biryani",
+      description: "Best dum biryani in India",
+      price: 300,
     },
     {
       id: "m2",
-      name: "Schnitzel",
-      description: "A german specialty!",
-      price: 16.5,
+      name: "Chicken Chilly",
+      description: "One of our speciality",
+      price: 220,
     },
     {
       id: "m3",
-      name: "Barbecue Burger",
-      description: "American, raw, meaty",
-      price: 12.99,
+      name: "Butter Chicken",
+      description: "Best wth butter garlic naan",
+      price: 240,
     },
     {
       id: "m4",
-      name: "Green Bowl",
-      description: "Healthy...and green...",
-      price: 18.99,
+      name: "Chicken Shwarma",
+      description: "Soft chicken filled with mayo and schezwan",
+      price: 120,
+    },
+    {
+      id: "m5",
+      name: "Veg Paneer Biryani",
+      description: "Best biryani for veg people",
+      price: 200,
+    },
+    {
+      id: "m6",
+      name: "Panner Chilly",
+      description: "Veg starters, with semi-gravy",
+      price: 250,
+    },
+    {
+      id: "m7",
+      name: "Paneer Shwarma",
+      description: "Some extras for veg people",
+      price: 100,
     },
   ];
   const list = data.map((meal) => {

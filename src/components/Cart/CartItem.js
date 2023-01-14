@@ -1,39 +1,35 @@
 import React, { useContext } from "react";
-import  {useState} from "react";
-
 import classes from "./CartItem.module.css";
 import CartContext from "../../store/cart-context";
 
 const CartItem = (props) => {
   const ctx = useContext(CartContext);
-  const price = `$${props.price.toFixed(2)}`;
+  const price = `₹${props.price.toFixed(2)}`;
+ const onAdd = () => {
+  return ctx.addItem(props);
+ }
 
-  const [quantity, setQuantity] = useState(props.quantity);
-  const quantityRemoveHandler = () => {
-    return Number(setQuantity(Number(quantity)-1));
-  };
-  
-  const quantityAddHandler = () => {
-    return Number(setQuantity(Number(quantity)+1));
-  }
-  
+ 
+ const onRemove = () => {
+  return ctx.removeItem(props.id);
+ }
+
 
   return (
-    <li className={classes["cart-item"]}>
-      {console.log(ctx.items)}
+    <li className={classes["cart-item"]} id={props.id}>
       <div>
         <h2>{props.name}</h2>
         <div className={classes.summary}>
           <span className={classes.price}>{price}</span>
           <span className={classes.amount}>
-            x{quantity}
+            x{props.quantity}
           </span>
 
         </div>
       </div>
       <div className={classes.actions}>
-        <button onClick={quantityRemoveHandler}>−</button>
-        <button onClick={quantityAddHandler}>+</button>
+        <button onClick={onRemove}>−</button>
+        <button onClick={onAdd}>+</button>
       </div>
     </li>
   );
