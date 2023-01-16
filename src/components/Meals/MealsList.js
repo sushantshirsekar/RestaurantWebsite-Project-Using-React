@@ -8,7 +8,7 @@ const MealsList = () => {
   const data = [
     {
       id: "m1",
-      name: "Biryani",
+      name: "Chicken Biryani",
       description: "Best dum biryani in India",
       price: 300,
     },

@@ -10,10 +10,11 @@ const MealItemForm = (props) => {
   const onClickAdd = (event) => {
     event.preventDefault();
     let quantity = document.getElementById("amount_" + props.id).value;
-    cartCtx.addItem({ ...props.item, quantity: quantity });
+    cartCtx.addItem({ ...props.item, quantity: Number(quantity)});
   };
   return (
     <form className={classes.form} onSubmit={onClickAdd}>
+      {console.log('inside Meal item form', cartCtx.items)}
       <Input
         label="Amount"
         input={{
